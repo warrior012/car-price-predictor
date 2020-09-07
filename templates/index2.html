@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <title>Car Price Predictor</title>
+    </head>
+
+    <body>
+
+        <div class="jumbotron ">
+            <div class="container col-md-12 ">
+                <div class="py-5 text-center">
+                    <h1 class="display-2">Car Price Predictor</h1>
+                    <p class="lead mt-1"> 
+
+                    </p>
+                    <p class="mt-4 h1">
+                    <h4>Please fill out the neccessary detail below to get the price of your car</h4>
+                    </p>
+                    <form class="mt-4 " action="{{ url_for('predict')}}" method="post">
+                        <h5>Year of car model</h5>
+                        <input class="mb-4" id="first" name="Year" type="number ">
+                        <h5>What is the Showroom Price?(In lakhs)</h5>
+                        <input class="mt-4" id="second" name="Present_Price" required="required">
+                        <h5 class="mt-4">How Many Kilometers Drived?</h5>
+                        <input class="mt-4 mb-4" id="third" name="Kms_Driven" required="required">
+                        <h5>How much owners previously had the car ?</h5><br>
+                        <select class="col-md-2" name="Owner" id="fourth" required="required">
+                            <option value="1">
+                                <h3>First</h3>
+                            </option>
+                            <option value="2">
+                                <h2>Second</h2>
+                            </option>
+                            <option value="3">
+                                <h3>Third</h3>
+                            </option>
+                        </select>
+                        <h5 class="mt-4 mb-4">What Is the Fuel type?</h5>
+                        <select class="col-md-2" name="Fuel_Type_Petrol" id="fuel" required="required">
+                            <option value="Petrol">Petrol</option>
+                            <option value="Diesel">Diesel</option>
+                            <option value="Diesel">CNG</option>
+                        </select>
+                        <h5 class="mt-4 mb-4">Are you A Dealer or Individual</h5>
+                        <select class="col-md-2" name="Seller_Type_Individual" id="resea" required="required">
+                            <option value="Dealer">
+                                <h4>Dealer</h4>
+                            </option>
+                            <option value="Individual">
+                                <h4>Individual</h4>
+                            </option>
+                        </select>
+                        <h5 class="mt-4 mb-4">Transmission type</h5>
+                        <select class="col-md-2" name="Transmission_Mannual" id="research" required="required">
+                            <option value="Mannual">
+                                <h4>Manual </h4>
+                            </option>
+                            <option value="Automatic">
+                                <h4>Automatic </h4>
+                            </option>
+                        </select>
+                        <br>
+                        <br>
+                        <br>
+                        <button type="button submit " class="btn btn-outline-primary btn-lg">Calculate the
+                            Price</button>
+                    </form><br><br>
+                    <h5>{{ prediction_texts }}</h5>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    </body>
+
+</html>
